@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+    int i, n;
+    int total = 0;
+    int max = 0;
+    int maxsIndex = 0;
+    
+    printf("== Guitar Logger ==\n");
+    printf("Enter no. of exercises done: ");
+    scanf("%d", &n);
+    char practiced[n][20];
+    int mins[n];
+   
+    for(i=0; i<n; i++){
+        printf("\nAmount of time practiced (in minutes): ");
+        scanf("%d", &mins[i]);
+        total += mins[i];
+    
+        printf("Type of practice done today: ");
+        scanf("%s", practiced[i]); 
+        
+        if(mins[i] > max){
+        max = mins[i];
+        maxsIndex = i;
+    }}
+    
+    printf("\nYou practiced:\n");
+    for(i=0; i<n; i++){
+        printf("\n%d. %s for %d minutes ", i+1, practiced[i], mins[i]); 
+    }
+    
+    printf("\nLongest session: %s (%d minutes)", practiced[maxsIndex], max);
+    
+    printf("\nTotal time practiced: %d", total);
+
+    return 0;
+}
